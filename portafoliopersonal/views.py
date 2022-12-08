@@ -58,9 +58,10 @@ def signin(request):
 
 
 # MUESTRA MENSAJE DE BIENVENIDA AL USUARIO
-#@login_required -> si para entrar sera requerido iniciar sesion 
+#@login_required -> si para entrar sera requerido iniciar
 def profile(request): 
-    return render(request, 'index.html') #profile
+
+        return render(request, 'index.html') #profile
 
 
 # SI EL USUARIO CIERRA SESION MANDA AL LOGIN

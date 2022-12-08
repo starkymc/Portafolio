@@ -51,8 +51,10 @@
     <div class="container">
 
       {% if user.is_authenticated %}
-
-        <h1> <a href="">{{ user.username }} </a></h1> 
+        <!-- Filtro mayuscula primera letra y nombre completo-->
+        <h1> <a href="">{{ user.username|title }} {{ user.last_name|title }} </a></h1> 
+        {% else %}
+        <h1><a href="">Admin </a></h1>
       {% endif %}
 
      <!-- <h1><a href="">Starky Medina</a></h1> -->
@@ -95,10 +97,23 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="static/assets/img/me.jpg" class="img-fluid" alt="">
+          <img src="../static/assets/img/me.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>UI/UX &amp; Graphic Designer</h3>
+
+
+
+        <!-- Llamando el titulo h3 apellido-->
+          {% if user.is_authenticated %}
+            <h3> <a href="">{{ user.first_name|title }} </a></h3> 
+          {% else %}
+            <h3>UI/UX &amp; Graphic Designer</h3>
+          {% endif %}
+
+          
+
+
+
           <p class="fst-italic">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.

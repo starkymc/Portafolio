@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 
-from portafoliopersonal.views import ( PortafolioP,Prueba,LoginView,
-home, signup, signin,signout,profile )
+from portafoliopersonal.views import ( Prueba,LoginView,
+home, signup, signin,signout,profile,formPortafolio )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('portafolio/', PortafolioP, name='index'),
+    #path('portafolio/', PortafolioP, name='index'),
 
 
     #path('signin/portafolio/',PortafolioP, name='signin'),
@@ -21,5 +21,5 @@ urlpatterns = [
     path('signin/',signin, name='signin'),
     path('signout/',signout, name='signout'),
     path('profile/',profile, name='profile'),
-
+    path('crearportafolio/',formPortafolio.as_view(), name='crear'),
 ]

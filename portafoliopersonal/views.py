@@ -10,8 +10,8 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 #from portafoliopersonal import utils
-from portafoliopersonal.models import Login
-from portafoliopersonal.forms import LoginForm
+from portafoliopersonal.models import Login, Portafolio
+from portafoliopersonal.forms import LoginForm, PortafioForm
 
 #Este es la pagina del login principal
 def signup(request):
@@ -70,12 +70,41 @@ def signout(request):
     return redirect('/signin')    
 
 #requerido
-@login_required
+"""@login_required
 class PortafolioP(ListView):
     model = Login
     template_name = 'index.html'
 
+    """
+#Creacion de formulario proyecto
+
+class formPortafolio(View):
+    template_get = 'formPortafolio.html'
+    context = {}
+
     
+    def get(self,request):
+        form = PortafioForm()
+        self.context['form'] = form
+        self.context['detail'] = Portafolio.objects.all()
+        #self.context['detail'] = Profesor.objects.filter(pk=id).first()
+        
+
+        return render(request,self.template_get,self.context)
+        #formulario = ProfesorForm()
+        #context = {'form': formulario}
+
+        #return render(request, self.template_get, context)
+    
+    def post(self, request):
+        form = PortafioForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        #self.context['form'] = form
+        self.context['detail'] = Portafolio.objects.all()
+        #self.context['detail'] = Profesor.objects.filter().first()
+        return render(request, 'index.html', self.context)
 
 
 

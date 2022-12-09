@@ -37,12 +37,7 @@
 
 <body>
 
-  {% if user.is_authenticated %}
-  <div class="logoutsesion" style="margin-left: 7%; margin-top: 10px">
-     <a href="/signout" class="btn btn-danger" >Logout</a>
-  </div>
-{% endif %}
-<div>
+  
   <!-- <a href="{% url 'home' %}">Cerrar sesion</a> -->
 
 </div>
@@ -70,6 +65,15 @@
           <li><a class="nav-link" href="#services">Services</a></li>
           <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
+
+          
+          {% if user.is_authenticated %}
+            <li><a class="nav-link" href="/signout">Cerrar sesion</a></li>
+          {% else %}
+            <li><a class="nav-link" href="/signin">Login</a></li>
+          {% endif %}
+
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -105,7 +109,7 @@
 
         <!-- Llamando el titulo h3 apellido-->
           {% if user.is_authenticated %}
-            <h3> <a href="">{{ user.first_name|title }} </a></h3> 
+            <h3> <a href="">{{ user.profession|title }} </a></h3> 
           {% else %}
             <h3>UI/UX &amp; Graphic Designer</h3>
           {% endif %}
@@ -115,29 +119,29 @@
 
 
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            Mis interes son Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua.
           </p>
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>24 Jul 2000</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+51 900 000 000</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lima - Peru</span></li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Jr</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Disponible</span></li>
               </ul>
             </div>
           </div>
           <p>
-            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+            Soy programador backend itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
             Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
           </p>
         </div>
@@ -153,7 +157,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="count-box">
             <i class="bi bi-emoji-smile"></i>
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
             <p>Happy Clients</p>
           </div>
         </div>
@@ -161,7 +165,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
           <div class="count-box">
             <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
             <p>Projects</p>
           </div>
         </div>
@@ -169,7 +173,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
             <p>Hours Of Support</p>
           </div>
         </div>
@@ -177,7 +181,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-award"></i>
-            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
             <p>Awards</p>
           </div>
         </div>
@@ -205,16 +209,23 @@
           </div>
 
           <div class="progress">
-            <span class="skill">CSS <i class="val">90%</i></span>
+            <span class="skill">CSS <i class="val">70%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
           <div class="progress">
-            <span class="skill">JavaScript <i class="val">75%</i></span>
+            <span class="skill">Python <i class="val">65%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span class="skill">Java <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -223,23 +234,31 @@
         <div class="col-lg-6">
 
           <div class="progress">
-            <span class="skill">PHP <i class="val">80%</i></span>
+            <span class="skill">C# <i class="val">70%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
           <div class="progress">
-            <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+            <span class="skill">Java <i class="val">70%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+
+          <div class="progress">
+            <span class="skill">MySQL <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
           <div class="progress">
-            <span class="skill">Photoshop <i class="val">55%</i></span>
+            <span class="skill">Oracle <i class="val">70%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -284,7 +303,7 @@
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-database-2-line" style="color: #47aeff;"></i>
-            <h3>Nemo Enim</h3>
+            <h3>Base de datos</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
@@ -386,8 +405,7 @@
             <ul>
               <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
               <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-              <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-              <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              
             </ul>
             </p>
           </div>
@@ -399,8 +417,7 @@
             <ul>
               <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
               <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-              <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-              <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+             
             </ul>
             </p>
           </div>
@@ -491,23 +508,82 @@
             <li data-filter=".filter-web">Web</li>
           </ul>
         </div>
+
       </div>
+       
+      <!-- Boton de creacion de nuevo proyecto formulario-->
+      {% if user.is_authenticated %}
+        <ul id="portfolio-flters">
+          <a href="{% url 'crear' %}" target="_blank" style="background: indianred;
+          color: #fff; border-style: hidden; text-align: center;
+          align-items: center;justify-content: center;
+          padding: 7px;border-radius: 5px; margin: 0 3px 10px 3px" >
+            Crear nuevo proyecto
+          </a>
+        </ul>
+      {% else %}
+        
+      {% endif %}
+
+
+      
 
       <div class="row portfolio-container">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
-            <img src="../static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+
+            {% if user.is_authenticated %}
+              <img src="{{ user.foto }} " class="img-fluid" alt="">
+            {% else %}
+              <img src="../static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            {% endif %}
+
             <div class="portfolio-info">
-              <h4>App 1</h4>
+
+
+              {% if user.is_authenticated %}
+                <h4> <a href="">{{ user.project_name|title }} </a></h4> 
+              {% else %}
+                <h4>Web 1</h4>
+              {% endif %}
+              
+
+              
+
+
+              {% if user.is_authenticated %}
+
               <p>App</p>
               <div class="portfolio-links">
-                <a href="../static/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="{{ user.foto }}" data-gallery="portfolioGallery" class="portfolio-lightbox" 
+                title="Titulo del proyecto: {{ user.project_name|title }}  </br> 
+                Descripcion del proyecto:  {{ user.description|title }}    </br>
+                Tags:   {{ user.tags|title }}         </br>
+                Github:  {{ user.github }}      </br>
+                Creador: {{ user.first_name|title }} {{ user.last_name|title }} </br>
+                Profesion: {{ user.profession|title }}">
+                <i class="bx bx-plus"></i></a>
+                
+                
                 <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
         </div>
+              {% else %}
+                <p>App</p>
+                <div class="portfolio-links">
+                <a href="../static/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" 
+                title="App 1">
+                <i class="bx bx-plus"></i></a>
+                
+                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">

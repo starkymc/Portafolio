@@ -72,7 +72,6 @@
           <li><a class="nav-link active" href="#header">Home</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
           <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
 
@@ -169,8 +168,8 @@
             </div>
           </div>
           <p>
-            Tengo conocimientos en los siguientes lenguajes de programacion como .........................<br>
-            ................................................................................................
+            Tengo conocimientos en los siguientes lenguajes de programacion como C#,Java, SQL <br>
+            
           </p>
         </div>
       </div>
@@ -411,6 +410,93 @@
 
   </section><!-- End About Section -->
 
+  {% if user.is_authenticated %}
+  
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Check My Resume</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">Sumary</h3>
+          <div class="resume-item pb-0">
+            <h4>Starky Medina</h4>
+            <p><em>
+              Desarrollador backend  orientado a objetivos,
+               desarrollo de paginas web y sistemas 
+              centrado en el usuario o empresa, desde el concepto inicial hasta la entrega final y pulida.
+            </em></p>
+            <p>
+            <ul>
+              <li>Lima, Peru</li>
+              <li>(+51) 900 ### ###</li>
+              <li>starkymc24@gmail.com</li>
+            </ul>
+            </p>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          
+
+          <div class="resume-item">
+            <h4>Backend developer Bootcamp</h4>
+            <h5>2022</h5>
+            <p><em>Silabuz, Startup, Peru</em></p>
+            <p>
+              Capacitado en el bootcamp para desarrolladores Backend,
+              aprendi habilidades duras y blandas.
+            </p>
+          </div>
+
+          <div class="resume-item">
+            <h4>Instituto ###### </h4>
+            <h5>2019 - 2022</h5>
+            <p><em>Rochester Institute of Technology, Lima, Peru</em></p>
+            <p>
+              Aprendi habilidades tecnicas para la.</p>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <h3 class="resume-title">Professional Experience</h3>
+          <div class="resume-item">
+            <h4>Developer backend senior</h4>
+            <h5>2022 - Present</h5>
+            <p><em>Lima, Peru </em></p>
+            <p>
+            <ul>
+              <li>Created the webapp Facebook</li>
+              <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+              
+            </ul>
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Developer backend jr</h4>
+            <h5>2019 - 2020</h5>
+            <p><em>Google inc. - Lima, Peru</em></p>
+            <p>
+            <ul>
+              <li>Created the webapp Twitter</li>
+              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+             
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Resume Section -->
+
+  {% else %}
+
   <!-- ======= Resume Section ======= -->
   <section id="resume" class="resume">
     <div class="container">
@@ -479,70 +565,12 @@
       </div>
 
     </div>
-  </section><!-- End Resume Section -->
+  </section>
+  <!-- End Resume Section -->
 
-  <!-- ======= Services Section ======= -->
-  <section id="services" class="services">
-    <div class="container">
 
-      <div class="section-title">
-        <h2>Services</h2>
-        <p>My Services</p>
-      </div>
+  {% endif %}
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4><a href="">Lorem Ipsum</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="">Sed ut perspiciatis</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4><a href="">Magni Dolores</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4><a href="">Nemo Enim</a></h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-slideshow"></i></div>
-            <h4><a href="">Dele cardo</a></h4>
-            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-arch"></i></div>
-            <h4><a href="">Divera don</a></h4>
-            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
 
   <!-- ======= Portfolio Section ======= -->
   <section id="portfolio" class="portfolio">
@@ -754,7 +782,7 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>My Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p>Lima, Peru</p>
           </div>
         </div>
 
@@ -783,7 +811,7 @@
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
-            <p>+1 5589 55488 55</p>
+            <p>+51 900 55488 55</p>
           </div>
         </div>
       </div>

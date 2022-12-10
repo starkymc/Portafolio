@@ -21,6 +21,10 @@
                     <!-- inicio columna first_name -->  
                   <div class="form-group mb-6 ">
                     <h2 class="text-3xl  font-bold mb-5 ">Crear un nuevo proyecto</h2>
+                    
+                   
+
+
                     <label class="form-label inline-block mb-2 text-gray-700 ">{{ form.foto.label}}</label>
                     <input type="text" name="foto" maxlength="400" required="" id="id_foto" class="form-control 
                       block
@@ -115,10 +119,17 @@
                           ease-in-out
                           m-0
                           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                          placeholder="Ingresa el link de tu github">
+                          placeholder=" Ingresa url de github del proyecto">
                       </div>
                       <!-- final columna salario -->
-
+                     
+                      <p class="text-lime-600">
+                        ⚠ <strong>Al guardar seras redirigido
+                          a la pagina principal, 
+                          deberas dar click en el nombre del usuario 
+                          para poder actualizar la pagina y visualizar el proyecto creado ! ⚠</strong>
+                      </p>
+                      <br>
                   <!-- inicio boton -->
                   <button type="submit" class="
                     px-6

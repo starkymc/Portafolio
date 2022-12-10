@@ -1,6 +1,3 @@
-user: gian
-pass: amores12
-
 
 user: jorge
 pass: jorge12345

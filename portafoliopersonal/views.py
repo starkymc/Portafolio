@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from portafoliopersonal.models import Login, Portafolio
 from portafoliopersonal.forms import LoginForm, PortafioForm
 
-#Este es la pagina del login principal
+# REGISTRO DE USUARIO
 def signup(request):
     if request.user.is_authenticated:
         return redirect('/')
@@ -32,12 +32,12 @@ def signup(request):
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
-
+# MENSAJE DE USUARIO CREADO CON EXITO
 def home(request): 
     return render(request, 'home.html')
 
 
-# SI EL USUARIO SE LOGO CORRECTAMENTE  SE REDIRIGE A /PROFILE
+# INICIO DE SESION LOGIN
 def signin(request):
     if request.user.is_authenticated:
         return render(request, 'home.html')
@@ -47,7 +47,10 @@ def signin(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            form = PortafioForm()
+
             return redirect('/profile') #profile
+            
         else:
             msg = 'Usuario o contraseña incorrecta'
             form = AuthenticationForm(request.POST)
@@ -58,51 +61,56 @@ def signin(request):
 
 
 # MUESTRA MENSAJE DE BIENVENIDA AL USUARIO
-#@login_required -> si para entrar sera requerido iniciar
+# llamando la tabla de portafolio (portafolio.portafoliopersonal_portafolio)
 def profile(request): 
-    return render(request, 'index.html') #profile
+    portafolioall = Portafolio.objects.all()
+    return render(request, 'index.html',{'posts': portafolioall}) #profile
 
 
-# SI EL USUARIO CIERRA SESION MANDA AL LOGIN
+# BOTON PARA REGRESAR AL LOGIN DE LA PAGINA home.html
 def signout(request):
     logout(request)
     return redirect('/home')    
 
 
-
+# SI EL USUARIO CIERRA SESION MANDA AL LOGIN index.html
 def signoutx(request):
     logout(request)
     return redirect('/')    
 
-"""def login(request):
-    return redirect('/')"""
 
 
 
 
-#requerido
-"""@login_required
-class PortafolioP(ListView):
-    model = Login
-    template_name = 'index.html'
 
-    """
+
 #Creacion de formulario proyecto
 
 class formPortafolio(View):
+    template_getall= 'index.html'
     template_get = 'formPortafolio.html'
     #template_get2 = 'index.html'
     context = {}
 
-    
+
+    #funcion para mostrar los portafolios en index
+    def get_portafolios(self,request):
+        formx = PortafioForm()
+        self.context['formx'] = formx
+        self.context['detailx']  = Portafolio.objects.all()
+        
+        return render(request,self.template_getall,self.context)
+    # aun no funcionando
+
+
     def get(self,request):
         form = PortafioForm()
         self.context['form'] = form
         self.context['detail'] = Portafolio.objects.all()
         #self.context['detail'] = Profesor.objects.filter(pk=id).first()
 
-    
-        return render(request,self.template_get,self.context) #self.context
+        return render(request,self.template_get,self.context)
+        #return render(request,self.template_portafolioall,self.context) #self.context
         #formulario = ProfesorForm()
         #context = {'form': formulario}
 
@@ -115,12 +123,20 @@ class formPortafolio(View):
 
         #self.context['form'] = form
         self.context['detail'] = Portafolio.objects.all()
-        #self.context['detail'] = Profesor.objects.filter().first()
+
+        #return redirect(request, '/signin', self.context)
         return render(request, 'index.html', self.context)
+
+   
+
+    """def render_posts(request):
+        portafolioall = Portafolio.objects.all()
+
+        return render(request, 'index.html', {'posts': portafolioall})"""
 
         
 
-
+# Funcion si el usuario quiere crear un portafolio debe iniciar sesion
 def requiredloginxportafolio(request): 
     return render(request, 'requiredportafolio.html')
 

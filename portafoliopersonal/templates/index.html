@@ -45,9 +45,16 @@
   <header id="header">
     <div class="container">
 
+      
+
+     
+
+
+
       {% if user.is_authenticated %}
         <!-- Filtro mayuscula primera letra y nombre completo-->
-        <h1> <a href="">{{ user.username|title }} {{ user.last_name|title }} </a></h1> 
+        <h1> <a href="/profile">{{ user.username|title }} {{ user.last_name|title }} </a></h1> 
+        
         {% else %}
         <h1><a href="">Admin </a></h1>
       {% endif %}
@@ -56,7 +63,7 @@
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       {% if user.is_authenticated %}
-        <h2>Soy un <span>desarrollador</span> apasionado en el mundo de TI</h2>
+        <h2>Soy un <span>desarrollador</span> apasionado por la TI</h2>
       {% else %}
         <h2>I'm a passionate <span>developer</span> from Peru</h2>
       {% endif %}
@@ -125,7 +132,8 @@
 
         <!-- Llamando el titulo h3 apellido-->
           {% if user.is_authenticated %}
-            <h3> <a href="">{{ user.profession|title }} </a></h3> 
+          <h3>Desarrollador Backend</h3>
+            <!-- <h3> <a href="">{{ user.profession|title }} </a></h3> -->
           {% else %}
             <h3>UI/UX &amp; Graphic Designer</h3>
           {% endif %}
@@ -560,7 +568,7 @@
       <!-- Boton de creacion de nuevo proyecto formulario-->
       {% if user.is_authenticated %}
         <ul id="portfolio-flters">
-          <a href="{% url 'crear' %}" target="_blank" style="background: indianred;
+          <a href="{% url 'crear' %}" style="background: indianred;
           color: #fff; border-style: hidden; text-align: center;
           align-items: center;justify-content: center;
           padding: 7px;border-radius: 5px; margin: 0 3px 10px 3px" >
@@ -572,23 +580,35 @@
       {% endif %}
 
       
+      <!-- DATOS DE LA TABLA_PORTAFIOLIOPERSONAL-->
+      {% if user.is_authenticated %}
+        {% for i in posts %}
       
+      <p><img src="{{i.foto}}" alt=""></p>
+        <p>Proyecto: {{i.project_name}}</p>
+        <p>Descripcion: {{i.description}}</p>
+        <p>Tags: {{i.tags}}</p>
+        <p>Github: {{i.github}}</p>
+      <br>
+      {% endfor %}
+      {% endif %}
+        <!-- DATOS DE LA TABLA_PORTAFIOLIOPERSONAL-->
 
       <div class="row portfolio-container">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
 
-           
 
-
+            
             {% if user.is_authenticated %}
-              {{ form }}
+                
               <img src="{{ user.foto }} " class="img-fluid" alt="">
+              
             {% else %}
               <img src="../static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
             {% endif %}
-
+            
             <div class="portfolio-info">
 
 
@@ -599,7 +619,14 @@
               {% endif %}
               
 
-              
+               <!-- MOSTRAR LOS PORTAFOLIOS AUN NO FUNCIONANDO 
+      {% for i in posts %}
+      {{i.foto}}
+        {{i.project_name}}
+      {% endfor %}
+
+ MOSTRAR LOS PORTAFOLIOS AUN NO FUNCIONANDO -->
+
 
 
               {% if user.is_authenticated %}
@@ -611,7 +638,10 @@
                 Tags:   {{ user.tags|title }}         </br>
                 Github:  {{ user.github }}      </br>
                 Creador: {{ user.first_name|title }} {{ user.last_name|title }} </br>
-                Profesion: {{ user.profession|title }}">
+                Profesion: {{ user.profession|title }}
+                
+                
+">
                 <i class="bx bx-plus"></i></a>
                 
                 

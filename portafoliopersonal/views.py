@@ -60,8 +60,8 @@ def signin(request):
 # MUESTRA MENSAJE DE BIENVENIDA AL USUARIO
 #@login_required -> si para entrar sera requerido iniciar
 def profile(request): 
-
-        return render(request, 'index.html') #profile
+   
+    return render(request, 'index.html') #profile
 
 
 # SI EL USUARIO CIERRA SESION MANDA AL LOGIN
@@ -80,6 +80,7 @@ class PortafolioP(ListView):
 
 class formPortafolio(View):
     template_get = 'formPortafolio.html'
+    #template_get2 = 'index.html'
     context = {}
 
     
@@ -88,9 +89,9 @@ class formPortafolio(View):
         self.context['form'] = form
         self.context['detail'] = Portafolio.objects.all()
         #self.context['detail'] = Profesor.objects.filter(pk=id).first()
-        
 
-        return render(request,self.template_get,self.context)
+
+        return render(request,self.template_get,self.context) #self.context
         #formulario = ProfesorForm()
         #context = {'form': formulario}
 

@@ -583,88 +583,39 @@
       <!-- DATOS DE LA TABLA_PORTAFIOLIOPERSONAL-->
       {% if user.is_authenticated %}
         {% for i in posts %}
-      
-      <p><img src="{{i.foto}}" alt=""></p>
-        <p>Proyecto: {{i.project_name}}</p>
-        <p>Descripcion: {{i.description}}</p>
-        <p>Tags: {{i.tags}}</p>
-        <p>Github: {{i.github}}</p>
-      <br>
-      {% endfor %}
-      {% endif %}
-        <!-- DATOS DE LA TABLA_PORTAFIOLIOPERSONAL-->
+
 
       <div class="row portfolio-container">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
 
 
-            
-            {% if user.is_authenticated %}
-              
-              <img src="{{ user.foto }} " class="img-fluid" alt="">
-              
-            {% else %}
-              <img src="../static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            {% endif %}
-            
+              <img src="{{i.foto}} " class="img-fluid" alt="">
+
             <div class="portfolio-info">
-
-
-              {% if user.is_authenticated %}
-                <h4> <a href="">{{ user.project_name|title }} </a></h4> 
-              {% else %}
-                <h4>Web 1</h4>
-              {% endif %}
-              
-
-               <!-- MOSTRAR LOS PORTAFOLIOS AUN NO FUNCIONANDO 
-      {% for i in posts %}
-      {{i.foto}}
-        {{i.project_name}}
-      {% endfor %}
-
- MOSTRAR LOS PORTAFOLIOS AUN NO FUNCIONANDO -->
-
-
-
-              {% if user.is_authenticated %}
-              <p>App</p>
+                <h4> <a href="">{{ i.project_name|title }} </a></h4> 
+              <p>Web</p>
               <div class="portfolio-links">
-                <a href="{{ user.foto }}" data-gallery="portfolioGallery" class="portfolio-lightbox" 
-                title="Titulo del proyecto: {{ user.project_name|title }}  </br> 
-                Descripcion del proyecto:  {{ user.description|title }}    </br>
-                Tags:   {{ user.tags|title }}         </br>
-                Github:  {{ user.github }}      </br>
-                Creador: {{ user.first_name|title }} {{ user.last_name|title }} </br>
-                Profesion: {{ user.profession|title }}
+                <a href="{{ i.foto }}" data-gallery="portfolioGallery" class="portfolio-lightbox" 
+                title="Titulo del proyecto: {{ i.project_name|title }}  </br> 
+                Descripcion del proyecto:  {{ i.description|title }}    </br>
+                Tags:   {{ i.tags|title }}         </br>
+                Github:  {{ i.github }}      </br>
                 ">
                 <i class="bx bx-plus"></i></a>
                 
                 
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <a href="{{ i.github }}" target= "_blank" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
         </div>
-              {% else %}
-                <p>App</p>
-                <div class="portfolio-links">
-                <a href="../static/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" 
-                title="App 1">
-                <i class="bx bx-plus"></i></a>
-                
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endif %}
+              
+        {% endfor %}
+        {% else %}
 
-
-        
-
+        <div class="row portfolio-container">
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
             <img src="../static/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
@@ -776,8 +727,14 @@
             </div>
           </div>
         </div>
-
       </div>
+      </div>
+        {% endif %}
+
+        
+        <!---->
+
+    
 
     </div>
   </section><!-- End Portfolio Section -->

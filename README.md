@@ -2,7 +2,7 @@
 # Proyecto Portafolio
 
 
-### Para poder correr el proyecto correctamente debes seguir correctamente los pasos siguientes:
+### Para poder correr el proyecto correctamente debes seguir los pasos siguientes:
 ### Clonar el repositorio en la terminal
     git clone https://github.com/starkymc/Portafolio
 

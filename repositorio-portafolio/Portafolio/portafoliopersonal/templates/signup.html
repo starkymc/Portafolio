@@ -1,0 +1,33 @@
+{% extends 'base.html' %}  
+{% block title %}
+<title>Registro de usuario</title>
+{% endblock %}
+  
+{% block body_title %}
+<h1 class="text-muted"></h1>
+{% endblock %}
+
+{% block content %}
+
+  <h2>Registro de usuario</h2>
+  <form method="post">
+    {% csrf_token %}
+    
+     {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+
+
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+    </br>
+    </br>
+    <a href="/" class="btn btn-primary">Ya tengo una cuenta</a>
+  </form>
+{% endblock %}

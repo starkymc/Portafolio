@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+  
+{% block title %}
+<title>Login</title>
+{% endblock %}
+  
+{% block body_title %}
+<h1 class="text-muted"> </h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Inicio de sesion</h2> 
+  {{ msg }}
+  <form method="post">
+    {% csrf_token %}
+   
+    <p>
+        <label for="id_username">Usuario:</label>
+        <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+ 
+      </p>
+
+      <p>
+        <label for="id_password">Contraseña:</label>
+        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+        
+      </p>
+    
+        
+   
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a href="/signup" class="btn btn-success">Crear una cuenta</a>
+  </form>
+  
+{% endblock %}

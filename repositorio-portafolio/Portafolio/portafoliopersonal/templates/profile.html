@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+  
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block body_title %}
+<h1 class="text-muted">Bienvenido al login</h1>
+{% endblock %}
+
+  
+{% block content %}
+  
+   {% if user.is_authenticated %}
+   <h2> Usuario {{ user.username }} !!</h2> 
+      <a href="/signout" class="btn btn-danger">Logout</a>
+    {% else %}
+        {{ msg }}
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Ingresar</button>
+          <a href="/signup" class="btn btn-success">Registrarme</a>
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Formulario Profesor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-slate-900">
+          <!-- centrar el div-->
+          <div class="flex items-center justify-center h-screen bg-slate-900">
+        
+            <!-- tamaño del form -->    
+            <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+                <!-- Inicio del form -->
+                <form action="" method="post" >
+                    {% csrf_token %}
+                    <!-- inicio columna first_name -->  
+                  <div class="form-group mb-6 ">
+                    <h2 class="text-3xl  font-bold mb-5 ">Crear un nuevo proyecto</h2>
+                    
+                   
+
+
+                    <label class="form-label inline-block mb-2 text-gray-700 ">{{ form.foto.label}}</label>
+                    <input type="text" name="foto" maxlength="400" required="" id="id_foto" class="form-control 
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
+                      aria-describedby="nameHelp" placeholder="Ingresa la url de la imagen del proyecto">
+                  </div>
+                  <!-- final columna first_name -->
+    
+                  <!-- columna last_name -->
+                  <div class="form-group mb-6">
+                    <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.project_name.label}}</label>
+                    <input type="text" name="project_name" maxlength="50" required="" id="id_project_name" class="form-control block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                      placeholder="Ingresa el nombre del proyecto">
+                  </div>
+                  <!-- final columna last_name -->
+    
+                  <!-- columna salario -->
+                  <div class="form-group mb-6">
+                    <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.description.label}}</label>
+                    <input type="text" name="description" maxlength="500" required="" id="id_description" class="form-control block w-full px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                      placeholder="Ingresa la descripcion del proyecto">
+                  </div>
+                  <!-- final columna salario -->
+
+                    <!-- columna salario -->
+                    <div class="form-group mb-6">
+                        <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.tags.label}}</label>
+                        <input type="text" name="tags" maxlength="100" required="" id="id_tags" class="form-control block w-full px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-white bg-clip-padding
+                          border border-solid border-gray-300
+                          rounded
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                          placeholder="Lenguajes de programacion usados">
+                      </div>
+                      <!-- final columna salario -->
+    
+                        <!-- columna salario -->
+                    <div class="form-group mb-6">
+                        <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.github.label}}</label>
+                        <input type="text" name="github" maxlength="450" required="" id="id_github" class="form-control block w-full px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-white bg-clip-padding
+                          border border-solid border-gray-300
+                          rounded
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                          placeholder=" Ingresa url de github del proyecto">
+                      </div>
+                      <!-- final columna salario -->
+                     
+                      <p class="text-lime-600">
+                        ⚠ <strong>Al guardar seras redirigido
+                          a la pagina principal, 
+                          deberas dar click en el nombre del usuario 
+                          para poder actualizar la pagina y visualizar el proyecto creado.! ⚠</strong>
+                      </p>
+                      <br>
+                  <!-- inicio boton -->
+                  <button type="submit" class="
+                    px-6
+                    py-2.5
+                    bg-blue-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-blue-700 hover:shadow-lg
+                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-blue-800 active:shadow-lg
+                    transition
+                    duration-150
+                    ease-in-out">
+                    Guardar
+                  </button>
+                
+                    <!-- final boton -->
+    
+                </form>
+                <!-- fin del form -->
+              </div>
+              <!-- fin del div tamaño del form -->    
+            </div>
+            <!-- fin del centrado de todo el div -->    
+            <script src="../static/assets/js/portafolio.js"></script>
+        </body>
+    </html>

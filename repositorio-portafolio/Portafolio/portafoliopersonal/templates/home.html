@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+  
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block body_title %}
+<h1 class="text-muted" style="text-align:center;">Bienvenido</h1>
+{% endblock %}
+
+{% block content %}
+   
+   {% if user.is_authenticated %}
+   <div class="container" style="text-align:center;">
+      <h2>{{ user.username }}!</h2>  
+      <h2>Te registraste correctamente, puedes regresar al login 🥳!</h2>
+    </div>
+    <a href="/signoutx" class="btn btn-danger" style="margin-left: 45%;">Login</a>
+    {% else %}
+      <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
+      <a href="/signup" class="btn btn-success">Signup</a>
+    {% endif %}
+{% endblock %}

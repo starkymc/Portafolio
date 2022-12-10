@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-
+from django.contrib.auth.decorators import login_required
 from portafoliopersonal.views import ( Prueba,LoginView,
-home, signup, signin,signout,profile,formPortafolio,login,signoutx )
+home, signup, signin,signout,profile,formPortafolio,login,signoutx, requiredloginxportafolio)
 
 #signoutx
 
@@ -25,7 +25,12 @@ urlpatterns = [
     path('',signin, name='signin'),
     path('signout/',signout, name='signout'),
     path('profile/',profile, name='profile'),
-    path('crearportafolio/',formPortafolio.as_view(), name='crear'),
+
+    path('crearportafolio/',login_required(formPortafolio.as_view(),login_url='/requiredxportf/'), name='crear'),
+    #path('crearportafolio/',formPortafolio.as_view(), name='crear'),
+
     path('signoutx/',signoutx, name='signoutx'),
     path('login/',login, name='login'),
+    path('requiredxportf/',requiredloginxportafolio, name='loginrequiredpf'),
 ]
+

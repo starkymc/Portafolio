@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Personal Bootstrap Template</title>
+  <title>Portafolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -71,6 +71,7 @@
 
           
           {% if user.is_authenticated %}
+            <li><a class="nav-link" href="#testform">Test form</a></li>
             <li><a class="nav-link" href="/signoutx">Cerrar sesion</a></li>
           {% else %}
             <li><a class="nav-link" href="/">Login</a></li>
@@ -102,11 +103,23 @@
         <p>Learn more about me</p>
       </div>
 
+
+      {% if user.is_authenticated %}
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="../static/assets/img/starky.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+      {% else %}
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
           <img src="../static/assets/img/me.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+      {% endif %}
+
+
+      
 
 
 
@@ -340,37 +353,37 @@
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3>Midela Teren</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-            <h3>Pira Neve</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-anchor-line" style="color: #b2904f;"></i>
-            <h3>Dirada Pack</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-disc-line" style="color: #b20969;"></i>
-            <h3>Moton Ideal</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-base-station-line" style="color: #ff5828;"></i>
-            <h3>Verdo Park</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
             <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-            <h3>Flavor Nivelanda</h3>
+            <h3>Tecnologia</h3>
           </div>
         </div>
       </div>
@@ -590,7 +603,6 @@
 
 
               {% if user.is_authenticated %}
-
               <p>App</p>
               <div class="portfolio-links">
                 <a href="{{ user.foto }}" data-gallery="portfolioGallery" class="portfolio-lightbox" 

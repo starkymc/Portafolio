@@ -101,7 +101,7 @@ class formPortafolio(View):
         self.context['detail'] = Portafolio.objects.all()
         #self.context['detail'] = Profesor.objects.filter(pk=id).first()
 
-
+    
         return render(request,self.template_get,self.context) #self.context
         #formulario = ProfesorForm()
         #context = {'form': formulario}
@@ -118,7 +118,11 @@ class formPortafolio(View):
         #self.context['detail'] = Profesor.objects.filter().first()
         return render(request, 'index.html', self.context)
 
+        
 
+
+def requiredloginxportafolio(request): 
+    return render(request, 'requiredportafolio.html')
 
 
 

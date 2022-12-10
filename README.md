@@ -1,6 +1,8 @@
 <h1 align="center">  Proyecto Portafolio</h1>
 
-
+<div align="center">
+<img aling="center" width="900" height="400" src="index.png" />
+</div>
 
 ### Para poder correr el proyecto correctamente debes seguir los pasos siguientes:
 ### Clonar el repositorio en la terminal

@@ -42,3 +42,14 @@
 
 ### Finalmente ya tenemos todo listo corremos el programa
     python manage.py runserver
+    
+    
+### Rutas principales del proyeco:
+    Inicio de sesion ("/")
+    Registro ("/signup")
+    Vista de la pagina principal ("/profile")
+    Creacion de portafolio ("/crearportafolio")
+    
+### Requerido ⚠️ :
+    Al momento de crear portafolio dar click en el nombre del usuario para refrescar la pagina y se pueda visualizar el proyecto creado
+    

@@ -602,7 +602,7 @@
 
             
             {% if user.is_authenticated %}
-                
+              
               <img src="{{ user.foto }} " class="img-fluid" alt="">
               
             {% else %}
@@ -639,9 +639,7 @@
                 Github:  {{ user.github }}      </br>
                 Creador: {{ user.first_name|title }} {{ user.last_name|title }} </br>
                 Profesion: {{ user.profession|title }}
-                
-                
-">
+                ">
                 <i class="bx bx-plus"></i></a>
                 
                 
@@ -663,6 +661,9 @@
           </div>
         </div>
         {% endif %}
+
+
+        
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">

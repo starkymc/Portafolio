@@ -81,12 +81,31 @@ h6 {
   font-size: 24px;
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.8);
+  
 }
 
 #header h2 span {
   color: #fff;
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
+
+  
+  
+  white-space: nowrap;
+  width: 12ch;
+  animation: typing 2s steps(12),
+  blink .5s infinite step-end alternate;
+  overflow: hiddden;
+}
+
+
+
+@keyframes typing {
+  from { width: 0}
+}
+
+@keyframes blink {
+  50% { border-color: transparent;}
 }
 
 #header img {
@@ -1197,8 +1216,7 @@ strong{
   color: #fff;
 }
 
-span{
-  
+
 }
 
 .about-me{
@@ -1238,12 +1256,5 @@ li{
 p{
   color: #fff;
 }
-
-
-
-
-
-
-
 
 

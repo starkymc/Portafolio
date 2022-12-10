@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    #"whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,11 +87,11 @@ DATABASES = {
         # DO NOT PUSH TO REPOSITORY
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': 'YQS2U3txZnHelYqI1vRs', # 1234
+        'PASSWORD': 'aCUteybzRhH1rN9RXA0H', # 1234
         # DO NOT PUSH TO REPOSITORY
-        'HOST': 'containers-us-west-134.railway.app', # localhost
+        'HOST': 'containers-us-west-125.railway.app', # localhost
         # DO NOT PUSH TO REPOSITORY
-        'PORT': '7398' # 3306
+        'PORT': '6025' # 3306
     }
 }
 
@@ -131,9 +131,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+#STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Default primary key field type

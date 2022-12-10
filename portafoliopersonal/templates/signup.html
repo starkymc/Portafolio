@@ -1,6 +1,6 @@
 {% extends 'base.html' %}  
 {% block title %}
-<title>Login</title>
+<title>Registro de usuario</title>
 {% endblock %}
   
 {% block body_title %}
@@ -12,12 +12,7 @@
   <h2>Registro de usuario</h2>
   <form method="post">
     {% csrf_token %}
-      
-
     
-
-    
-   
      {% for field in form %}
       <p>
         {{ field.label_tag }}<br>
@@ -33,6 +28,6 @@
     <button type="submit" class="btn btn-success">Registrar</button>
     </br>
     </br>
-    <a href="/signin" class="btn btn-primary">Ya tengo una cuenta</a>
+    <a href="/" class="btn btn-primary">Ya tengo una cuenta</a>
   </form>
 {% endblock %}

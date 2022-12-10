@@ -25,7 +25,7 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('/signin')
+            return redirect('/home')
         else:
             return render(request, 'signup.html', {'form': form})
     else:
@@ -60,14 +60,25 @@ def signin(request):
 # MUESTRA MENSAJE DE BIENVENIDA AL USUARIO
 #@login_required -> si para entrar sera requerido iniciar
 def profile(request): 
-   
     return render(request, 'index.html') #profile
 
 
 # SI EL USUARIO CIERRA SESION MANDA AL LOGIN
 def signout(request):
     logout(request)
-    return redirect('/signin')    
+    return redirect('/home')    
+
+
+
+def signoutx(request):
+    logout(request)
+    return redirect('/')    
+
+"""def login(request):
+    return redirect('/')"""
+
+
+
 
 #requerido
 """@login_required

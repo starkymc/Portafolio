@@ -1,4 +1,4 @@
-<h1 align="center">  Proyecto Portafolio</h1>
+<h1 align="center">Proyecto Portafolio</h1>
 
 <div align="center">
 <img aling="center" width="900" height="400" src="index.png" />

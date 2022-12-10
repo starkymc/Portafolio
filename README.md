@@ -1,5 +1,4 @@
-
-# Proyecto Portafolio
+<h1 align="center">  Proyecto Portafolio</h1>
 
 
 ### Para poder correr el proyecto correctamente debes seguir los pasos siguientes:

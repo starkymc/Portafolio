@@ -1,21 +1,7 @@
 from django.db import models
-
-# Create your models here.
-class Login(models.Model):
-    name = models.TextField()
-    password = models.TextField()
+from django.contrib.auth.models import User
 
 
-    def __str__(self):
-        return self.name
-
-    def to_json(self):
-        login_in_json = {
-            'name': self.name,
-            'password': self.password
-        }
-
-        return login_in_json
 
 class Portafolio(models.Model):
     foto = models.CharField(max_length=400)
@@ -23,6 +9,11 @@ class Portafolio(models.Model):
     description = models.CharField(max_length=500)
     tags = models.CharField(max_length=100)
     github = models.CharField(max_length=450)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.project_name + ' - by ' + self.user.username
+    #+ self.user.username
 
     def to_json(self):
        model_in_jason  = {
@@ -34,5 +25,7 @@ class Portafolio(models.Model):
        }
        return model_in_jason   
 
+
+   
 
    

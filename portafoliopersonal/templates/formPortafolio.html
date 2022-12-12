@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Formulario Proyecto</title>
+        <title>Formulario Profesor</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -59,129 +59,119 @@
             <!-- tamaño del form -->    
             <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm " style="margin-top: 200px;">
                 <!-- Inicio del form -->
-                <form action="" method="post" >
+                
+                {{error}}
+                <form action="/crear/" method="post" >
                     {% csrf_token %}
                     <!-- inicio columna first_name -->  
-                  <div class="form-group mb-6 ">
-                    <h2 class="text-3xl  font-bold mb-5 ">Crear un nuevo proyecto</h2>
-                    
-                   
-                     <!-- columna foto -->
-                    <label class="form-label inline-block mb-2 text-gray-700 ">{{ form.foto.label}}</label>
-                    <input type="url" name="foto" maxlength="400" required="" id="id_foto"  class="form-control 
-                      block
-                      w-full
-                      px-3
-                      py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-gray-300
-                      rounded
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
-                      aria-describedby="nameHelp" placeholder="Ingresa la url de la imagen del proyecto">
-                  </div>
-                  <!-- final columna foto -->
-    
-                  <!-- columna proyecto -->
-                  <div class="form-group mb-6">
-                    <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.project_name.label}}</label>
-                    <input type="text" name="project_name" maxlength="50" required="" id="id_project_name" class="form-control block
-                      w-full
-                      px-3
-                      py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-gray-300
-                      rounded
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                      placeholder="Ingresa el nombre del proyecto">
-                  </div>
-                  <!-- final columna proyecto -->
-    
-                  <!-- columna description -->
-                  <div class="form-group mb-6">
-                    <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.description.label}}</label>
-                    <input type="text" name="description" maxlength="500" required="" id="id_description" class="form-control block w-full px-3
-                      py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-gray-300
-                      rounded
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                      placeholder="Ingresa la descripcion del proyecto">
-                  </div>
-                  <!-- final columna description -->
-
-
-                   <!-- columna url -->
-                   <div class="form-group mb-6">
-                    <label for="id_github" class="form-label inline-block mb-2 text-gray-700">{{ form.github.label}}</label>
-                    <input type="url" name="github" maxlength="450" required="" id="id_github" class="form-control block w-full px-3
-                      py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-gray-300
-                      rounded
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                      placeholder=" Ingresa url de github del proyecto">
-                  </div>
-                  <!-- final columna url -->
-
-
-
-                    <!-- columna tags -->
-                    <div class="form-group mb-6">
-                        <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.tags.label}}</label>
-                        <input type="text" name="tags" maxlength="100" required="" id="id_tags" class="form-control block w-full px-3
-                          py-1.5
-                          text-base
-                          font-normal
-                          text-gray-700
-                          bg-white bg-clip-padding
-                          border border-solid border-gray-300
-                          rounded
-                          transition
-                          ease-in-out
-                          m-0
-                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                          placeholder="Lenguajes de programacion usados">
-                      </div>
-                      <!-- final columna tags -->
-    
-                       
+                    <div class="form-group mb-6 ">
+                      <h2 class="text-3xl  font-bold mb-5 ">Crear un nuevo proyecto</h2>
+                      
                      
-                  
-
-                  <div style="margin-top:1px;">
-                    <p class="text-lime-600">
-                      ⚠ <strong>Al guardar seras redirigido
-                        a la pagina principal, 
-                        deberas dar click en el nombre del usuario 
-                        para poder actualizar la pagina y visualizar el proyecto creado ! ⚠</strong>
-                    </p>
-                    <br>
-                  </div>
-
+                       <!-- columna foto -->
+                      <label class="form-label inline-block mb-2 text-gray-700 ">{{ form.foto.label}}</label>
+                      <input type="url" name="foto" maxlength="400" required="" id="id_foto"  class="form-control 
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
+                        aria-describedby="nameHelp" placeholder="Ingresa la url de la imagen del proyecto">
+                    </div>
+                    <!-- final columna foto -->
+      
+                    <!-- columna proyecto -->
+                    <div class="form-group mb-6">
+                      <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.project_name.label}}</label>
+                      <input type="text" name="project_name" maxlength="50" required="" id="id_project_name" class="form-control block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                        placeholder="Ingresa el nombre del proyecto">
+                    </div>
+                    <!-- final columna proyecto -->
+      
+                    <!-- columna description -->
+                    <div class="form-group mb-6">
+                      <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.description.label}}</label>
+                      <input type="text" name="description" maxlength="500" required="" id="id_description" class="form-control block w-full px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                        placeholder="Ingresa la descripcion del proyecto">
+                    </div>
+                    <!-- final columna description -->
+  
+  
+                     <!-- columna url -->
+                     <div class="form-group mb-6">
+                      <label for="id_github" class="form-label inline-block mb-2 text-gray-700">{{ form.github.label}}</label>
+                      <input type="url" name="github" maxlength="450" required="" id="id_github" class="form-control block w-full px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                        placeholder=" Ingresa url de github del proyecto">
+                    </div>
+                    <!-- final columna url -->
+  
+  
+  
+                      <!-- columna tags -->
+                      <div class="form-group mb-6">
+                          <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.tags.label}}</label>
+                          <input type="text" name="tags" maxlength="100" required="" id="id_tags" class="form-control block w-full px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                            placeholder="Lenguajes de programacion usados">
+                        </div>
+                        <!-- final columna tags -->
+      
+                         
+                      
                    
                   <!-- inicio boton -->
                   <button type="submit" class="

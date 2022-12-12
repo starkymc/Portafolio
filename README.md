@@ -5,16 +5,20 @@
 </div>
 
 ### En este proyecto se inicio inicialmente, aqui se encuentran todos los commits
-### (actualizacion) Se subio a Railway pero sin algunos diseños del proyecto local
+### (actualizacion) Se subio a Railway
 ### Link de Railway
    - https://portafolio-production-66d6.up.railway.app/
-
-### Cree otro proyecto en local con mas diseños
-- https://github.com/starkymc/Portafolio-local-withoutrailway
+   
 <hr>
+
+### Cree otro repositorio con toda la documentacion paso a paso para poder correr el proyecto de manera local y un video en youtube
+- https://github.com/starkymc/Portafolio-local-withoutrailway
 
 ## Youtube
 [Youtube demo - Click aqui](https://www.youtube.com/watch?v=HJ986S9yxWo "link title")
+
+<hr>
+
 
   
 ### Rutas principales del proyeco:

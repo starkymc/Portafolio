@@ -80,7 +80,8 @@ def signoutx(request):
     logout(request)
     return redirect('/')    
 
-
+def profile_sinuser(request):
+    return render(request,'index.html')
 
 
 # funcion generar la vista aqui se llaman las 3 funciones creadas

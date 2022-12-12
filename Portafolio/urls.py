@@ -37,7 +37,7 @@ urlpatterns = [
     #path('urlpreview/', urlpreview, name='generate_preview'),
     path('generate_preview/', generate_preview, name='generate'),
     ###
-    path('crear/', login_required(views.crear), name='create'),
+    path('crear/', login_required(views.crear,login_url='/requiredxportf/'), name='create'),
 ]
 
 

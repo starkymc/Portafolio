@@ -5,8 +5,21 @@
 </div>
 
 ### En este proyecto se inicio inicialmente, aqui se encuentran todos los commits
-### Pero fue subido a railway sin exito 😪
+### (actualizacion) Se subio a Railway pero sin algunos diseños del proyecto local
+### Link de Railway
+   - https://portafolio-production-66d6.up.railway.app/
 
-
-### Cree otro proyecto en local funcionando
+### Cree otro proyecto en local con mas diseños
 - https://github.com/starkymc/Portafolio-local-withoutrailway
+
+  
+### Rutas principales del proyeco:
+    Inicio de sesion ("/")
+    Registro ("/signup")
+    Vista de la pagina principal ("/profile")
+    Creacion de portafolio ("/crearportafolio")
+    
+### Requerido ⚠️ :
+    Al momento de crear portafolio dar click en el nombre del usuario para refrescar la pagina y se pueda visualizar el proyecto creado
+    
+

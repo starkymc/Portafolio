@@ -87,11 +87,11 @@ DATABASES = {
         # DO NOT PUSH TO REPOSITORY
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': 'VRbMIxaKy9w44SC3JeaX', # 1234
+        'PASSWORD': 'TvmAwjjnMiQHedcMYzDn', # 1234
         # DO NOT PUSH TO REPOSITORY
-        'HOST': 'containers-us-west-125.railway.app', # localhost
+        'HOST': 'containers-us-west-149.railway.app', # localhost
         # DO NOT PUSH TO REPOSITORY
-        'PORT': '6025' # 3306
+        'PORT': '7937' # 3306
     }
 }
 

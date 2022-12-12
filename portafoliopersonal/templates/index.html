@@ -76,6 +76,7 @@
 
           
           {% if user.is_authenticated %}
+            <li><a class="nav-link" href="#testform">Test form</a></li>
             <li><a class="nav-link" href="/signoutx">Cerrar sesion</a></li>
           {% else %}
             <li><a class="nav-link" href="/">Login</a></li>
@@ -594,7 +595,7 @@
       <!-- Boton de creacion de nuevo proyecto formulario-->
       {% if user.is_authenticated %}
         <ul id="portfolio-flters">
-          <a href="{% url 'crear' %}" style="background: indianred;
+          <a href="{% url 'create' %}" style="background: indianred;
           color: #fff; border-style: hidden; text-align: center;
           align-items: center;justify-content: center;
           padding: 7px;border-radius: 5px; margin: 0 3px 10px 3px" >

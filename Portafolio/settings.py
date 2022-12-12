@@ -87,7 +87,7 @@ DATABASES = {
         # DO NOT PUSH TO REPOSITORY
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': 'aCUteybzRhH1rN9RXA0H', # 1234
+        'PASSWORD': 'VRbMIxaKy9w44SC3JeaX', # 1234
         # DO NOT PUSH TO REPOSITORY
         'HOST': 'containers-us-west-125.railway.app', # localhost
         # DO NOT PUSH TO REPOSITORY

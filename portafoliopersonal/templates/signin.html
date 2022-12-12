@@ -22,7 +22,10 @@
 
 
 
-          {{ error }}
+           <p style="text-align: center;color: red;font-weight: 600;font-size: larger;">
+            {{ error }}
+          </p>
+          
           <form method="post" class="card-body cardbody-color p-lg-5" style="background-color: white;">
             {% csrf_token %}
             <div class="text-center">

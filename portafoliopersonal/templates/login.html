@@ -9,27 +9,52 @@
 {% endblock %}
 
 {% block content %}
-  <h2>Inicio de sesion</h2> 
-  {{ msg }}
-  <form method="post">
-    {% csrf_token %}
-   
-    <p>
-        <label for="id_username">Usuario:</label>
-        <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
- 
-      </p>
-
-      <p>
-        <label for="id_password">Contraseña:</label>
-        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
-        
-      </p>
-    
-        
-   
-    <button type="submit" class="btn btn-primary">Entrar</button>
-    <a href="/signup" class="btn btn-success">Crear una cuenta</a>
-  </form>
+<body style="background: no-repeat;background: url(../static/assets/img/fondologin.jpg);background-size: cover;">
   
+
+ 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-white mt-5">Inicio de sesion</h2>
+        <div class="card my-5">
+
+
+
+
+          {{ msg }}
+          <form method="post" class="card-body cardbody-color p-lg-5" style="background-color: white;">
+            {% csrf_token %}
+            <div class="text-center">
+              <img src="../static/assets/img/dev.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile" style="height: 200px;
+                width: 200px;
+                object-fit: cover;">
+            </div>
+
+            <div class="mb-3">
+              <input type="text" class="form-control" autocomplete="username" maxlength="150" required="" id="id_username" name="username" autofocus=""  aria-describedby="text"
+                placeholder="Usuario">
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" name="password" autocomplete="current-password" required="" id="id_password" placeholder="Contraseña">
+            </div>
+            <div class="text-center">
+
+            <button type="submit" class="btn btn-color px-5 mb-5 w-100" style=" background-color: #0e1c36;
+            color: #fff;">Entrar</button></div>
+            <div id="emailHelp" class="form-text text-center text-dark mb-5" style="color: white;">No estas registrado?
+            <a href="signup" class="fw-bold text-dark" style="text-decoration: none; color: white;"> Crear una 
+              cuenta</a>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
 {% endblock %}

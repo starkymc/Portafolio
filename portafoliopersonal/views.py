@@ -8,8 +8,13 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-# Create your views here.
-#from portafoliopersonal import utils
+
+#link-preview-lib
+import requests
+from bs4 import BeautifulSoup
+from django.http import JsonResponse
+####
+
 from portafoliopersonal.models import Login, Portafolio
 from portafoliopersonal.forms import LoginForm, PortafioForm
 
@@ -63,7 +68,9 @@ def signin(request):
 # MUESTRA MENSAJE DE BIENVENIDA AL USUARIO
 # llamando la tabla de portafolio (portafolio.portafoliopersonal_portafolio)
 def profile(request): 
+
     portafolioall = Portafolio.objects.all()
+    
     return render(request, 'index.html',{'posts': portafolioall}) #profile
 
 
@@ -81,26 +88,82 @@ def signoutx(request):
 
 
 
+# funcion generar la vista aqui se llaman las 3 funciones creadas
+def generate_preview(request):
+    headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Max-Age': '3600',
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
+    }
 
+    url = request.GET.get('link')
+    print(url)
+    req = requests.get(url, headers)
+    html = BeautifulSoup(req.content, 'html.parser')
+    meta_data = {
+        'title': get_title(html),
+        'description': get_description(html),
+        'image': get_image(html),
+    }
 
+    print(meta_data)
+
+    return JsonResponse(meta_data)
+
+# funcion para obtener description de  title
+def get_title(html):
+    """Scrape page title."""
+    title = None
+    if html.title.string:
+        title = html.title.string
+    elif html.find("meta", property="og:title"):
+        title = html.find("meta", property="og:title").get('content')
+    elif html.find("meta", property="twitter:title"):
+        title = html.find("meta", property="twitter:title").get('content')
+    elif html.find("h1"):
+        title = html.find("h1").string
+    return title
+
+# funcion para obtener description de  url
+def get_description(html):
+    """Scrape page description."""
+    description = None
+    if html.find("meta", property="description"):
+        description = html.find("meta", property="description").get('content')
+    elif html.find("meta", property="og:description"):
+        description = html.find(
+            "meta", property="og:description").get('content')
+    elif html.find("meta", property="twitter:description"):
+        description = html.find(
+            "meta", property="twitter:description").get('content')
+    elif html.find("p"):
+        description = html.find("p").contents
+    return description
+
+# funcion para obtener imagen previa de  url
+def get_image(html):
+
+    image = None
+    if html.find("meta", property="image"):
+        image = html.find("meta", property="image").get('content')
+    elif html.find("meta", property="og:image"):
+        image = html.find("meta", property="og:image").get('content')
+    elif html.find("meta", property="twitter:image"):
+        image = html.find("meta", property="twitter:image").get('content')
+    elif html.find("img", src=True):
+        image = html.find_all("img").get('src')
+    return image
+
+###############
 
 #Creacion de formulario proyecto
-
 class formPortafolio(View):
     template_getall= 'index.html'
     template_get = 'formPortafolio.html'
     #template_get2 = 'index.html'
     context = {}
-
-
-    #funcion para mostrar los portafolios en index
-    def get_portafolios(self,request):
-        formx = PortafioForm()
-        self.context['formx'] = formx
-        self.context['detailx']  = Portafolio.objects.all()
-        
-        return render(request,self.template_getall,self.context)
-    # aun no funcionando
 
 
     def get(self,request):
@@ -120,19 +183,15 @@ class formPortafolio(View):
         form = PortafioForm(request.POST)
         if form.is_valid():
             form.save()
-
+            self.context['detail'] = Portafolio.objects.all()
+            return render(request, 'index.html', self.context)
+        else:
+            return HttpResponse("No se pudo guardar el proyecto")
+            #return render(request, 'index.html', self.context)
         #self.context['form'] = form
-        self.context['detail'] = Portafolio.objects.all()
-
-        #return redirect(request, '/signin', self.context)
-        return render(request, 'index.html', self.context)
+            
 
    
-
-    """def render_posts(request):
-        portafolioall = Portafolio.objects.all()
-
-        return render(request, 'index.html', {'posts': portafolioall})"""
 
         
 
@@ -142,31 +201,5 @@ def requiredloginxportafolio(request):
 
 
 
-class LoginView(ListView):
-    model = Login
-    template_name = 'login.html'
 
 
-class Prueba(ListView):
-    model = Login
-    template_name = 'prueba.html'
-
-
-class LoginFormInsert(View):
-    def get(self, request):
-        Frmlogin = LoginForm()
-
-        context = {'form': Frmlogin} 
-
-        return render (request,'login.html', context)
-
-    def post(self, request):
-        formulario = LoginForm(request.POST)
-        if formulario.is_valid():
-            request.session['name_insert'] = formulario.cleaned_data['name']
-            request.session['password_insert'] = formulario.cleaned_data['password']
-            nameI = request.session['name_insert']
-            passwordI = request.session['password_insert']
-
-            return HttpResponse(f'El usuario es: {nameI} y la contraseña es: {passwordI}')
-        return HttpResponse('Valores del formulario invalidos')

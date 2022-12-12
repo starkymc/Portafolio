@@ -9,25 +9,50 @@
 
 {% block content %}
 
-  <h2>Registro de usuario</h2>
-  <form method="post">
-    {% csrf_token %}
-    
-     {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
+
+<body style="background: no-repeat;background: url(../static/assets/img/fondologin.jpg);background-size: cover;">
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-white mt-5">Registro de usuario</h2>
+      <div class="card my-5">
+<form method="post" style="
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    ">
+  {% csrf_token %}
+  
+   {% for field in form %}
+   <p style="margin-top: 10px;">
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+  {% endfor %}
 
 
 
-    <button type="submit" class="btn btn-success">Registrar</button>
-    </br>
-    </br>
-    <a href="/" class="btn btn-primary">Ya tengo una cuenta</a>
-  </form>
+  <button type="submit" class="btn btn-success">Registrar</button>
+  </br>
+  </br>
+  <a href="/" class="btn btn-primary">Ya tengo una cuenta</a>
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+  
+
+
+
+</body>
 {% endblock %}

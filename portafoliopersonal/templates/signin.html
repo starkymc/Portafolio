@@ -22,12 +22,13 @@
 
 
 
-           <p style="text-align: center;color: red;font-weight: 600;font-size: larger;">
-            {{ error }}
-          </p>
+           
           
           <form method="post" class="card-body cardbody-color p-lg-5" style="background-color: white;">
             {% csrf_token %}
+            <p style="text-align: center;color: red;font-weight: 600;font-size: larger;">
+            {{ error }}
+          </p>
             <div class="text-center">
               <img src="../static/assets/img/dev.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                 width="200px" alt="profile" style="height: 200px;

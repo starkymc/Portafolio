@@ -18,9 +18,9 @@
       <h2 class="text-center text-white mt-5">Registro de usuario</h2>
       <div class="card my-5">
         
-         <p style="text-align: center;color: red;font-weight: 600;font-size: larger;">
-            {{ error }}
-          </p>
+
+        <p style="text-align: center;color: red;font-weight: 600;font-size: larger;">{{ error }}</p>
+        
 <form method="post" style="
         display: flex;
         flex-direction: column;
@@ -34,9 +34,7 @@
    <p style="margin-top: 10px;">
       {{ field.label_tag }}<br>
       {{ field }}
-      {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
-      {% endfor %}
+      
     </p>
   {% endfor %}
 

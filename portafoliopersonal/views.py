@@ -174,6 +174,11 @@ def requiredloginxportafolio(request):
     return render(request, 'requiredportafolio.html')
 
 
+# Funcion borrar portafolio x usuario
+def delete(request, id_port):
+    porta = Portafolio.objects.get(pk=id_port)
+    porta.delete()
+    return redirect ('profile')
 
 
 

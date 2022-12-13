@@ -631,11 +631,11 @@
                 Github:  {{ i.github }}      </br>
                 ">
                 <i class="bx bx-plus"></i>
-                <a href="{{ i.github }}" target="_blank" class="github">
+                <a href="{{ i.github }}" target="_blank" class="github" title="{{ i.github }}">
                    <i class="bi bi-github"></i></a>
 
                    <a href="{% url 'delete' i.id %}"class="github">
-                    <i class="bi bi-x-square-fill" style="color: indianred;"></i></a>
+                    <i class="bi bi-x-square-fill" style="color: indianred;" title="Eliminar"></i></a>
               </a>
                 
                

@@ -25,6 +25,16 @@ class Portafolio(models.Model):
        }
        return model_in_jason   
 
+class IpAddress (models.Model):
+    pub_date=models.DateField("Fecha de petición")
+    ip_address = models.GenericIPAddressField()
+
+    class Meta:
+        verbose_name = 'Direccion IP'
+        verbose_name_plural = 'Direcciones de Ip'
+    def __str__(self):
+        return f"{self.ip_address}" 
+   
 
    
 

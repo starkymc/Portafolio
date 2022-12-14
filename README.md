@@ -28,7 +28,7 @@
     Creacion de portafolio ("/crearportafolio")
     
 
-### Screenshots
+<h1 align="center">Screenshots</h1>
 
 <div align="center">
 <img aling="center" width="900" height="400" src="crear.png" />

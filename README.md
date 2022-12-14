@@ -28,3 +28,8 @@
     Creacion de portafolio ("/crearportafolio")
     
 
+### Screenshots
+
+<div align="center">
+<img aling="center" width="900" height="400" src="crear.png" />
+</div>
